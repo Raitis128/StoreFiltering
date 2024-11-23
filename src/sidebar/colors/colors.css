@@ -1,3 +1,13 @@
 .color-title {
   margin-top: 2rem;
 }
+
+.sidebar-label-container input[type="radio"]:checked + .checkmark {
+  border: 2px solid black;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-label-container input[type="radio"]:checked + .checkmark.white {
+  background: white;
+  border: 2px solid black;
+}

@@ -1,12 +1,18 @@
 import { FiHeart } from "react-icons/fi";
 import "./nav.css";
 import { AiOutlineShoppingCart, AiOutlineUserAdd } from "react-icons/ai";
+import PropTypes from "prop-types";
 
-const Nav = () => {
+const Nav = ({ handleInputChange }) => {
   return (
     <nav>
       <div className="nav-container">
-        <input className="search-input" type="text" placeholder="Search" />
+        <input
+          onChange={handleInputChange}
+          className="search-input"
+          type="text"
+          placeholder="Search"
+        />
       </div>
 
       <div className="profile-container">
@@ -24,6 +30,10 @@ const Nav = () => {
       </div>
     </nav>
   );
+};
+
+Nav.propTypes = {
+  handleInputChange: PropTypes.func.isRequired,
 };
 
 export default Nav;

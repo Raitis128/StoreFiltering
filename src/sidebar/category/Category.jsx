@@ -1,31 +1,46 @@
+import Input from "../../components/Input";
 import "./category.css";
+import PropTypes from "prop-types";
 
-const Category = () => {
+const Category = ({ handleChange }) => {
   return (
     <div>
       <h2 className="sidebar-title">Category</h2>
-      <label className="sidebar-label-container">
-        <input type="radio" name="test" />
-        <span className="checkmark"></span>All
-      </label>
-      <label className="sidebar-label-container">
-        <input type="radio" name="test" />
-        <span className="checkmark"></span>Sneakers
-      </label>
-      <label className="sidebar-label-container">
-        <input type="radio" name="test" />
-        <span className="checkmark"></span>Flats
-      </label>
-      <label className="sidebar-label-container">
-        <input type="radio" name="test" />
-        <span className="checkmark"></span>Sandals
-      </label>
-      <label className="sidebar-label-container">
-        <input type="radio" name="test" />
-        <span className="checkmark"></span>Heels
-      </label>
+
+      <div>
+        <label className="sidebar-label-container">
+          <input type="radio" name="test" value="" onChange={handleChange} />
+          <span className="checkmark"></span>
+          All
+        </label>
+
+        <Input
+          handleChange={handleChange}
+          value="sneakers"
+          title="Sneakers"
+          name="test"
+        />
+
+        <Input
+          handleChange={handleChange}
+          value="flats"
+          title="Flats"
+          name="test"
+        />
+
+        <Input
+          handleChange={handleChange}
+          value="heels"
+          title="Heels"
+          name="test"
+        />
+      </div>
     </div>
   );
+};
+
+Category.propTypes = {
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default Category;
